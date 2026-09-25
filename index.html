@@ -1,0 +1,2299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ali Shair App Studio | App & Game Development</title>
+
+<meta name="description" content="Ali Shair App Studio is an app and game development studio focused on building modern, reliable and engaging digital experiences.">
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#ffffff;
+    color:#15182b;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+:root{
+    --primary:#6758ff;
+    --secondary:#12c6b3;
+    --dark:#12162b;
+    --dark2:#1a203b;
+    --text:#656b7d;
+    --light:#f6f7fc;
+    --white:#ffffff;
+    --border:#e7e9f1;
+    --gradient:linear-gradient(135deg,#6758ff,#895cff,#12c6b3);
+}
+
+.container{
+    width:90%;
+    max-width:1180px;
+    margin:auto;
+}
+
+
+/* =========================================
+   BLOGGER FIX
+========================================= */
+
+.sidebar,
+.sidebar-container,
+.sidebar-container-outer,
+#sidebar,
+#sidebar-wrapper,
+aside.sidebar,
+.Profile,
+.widget.Profile{
+    display:none !important;
+}
+
+.main,
+.main-container,
+.main-inner,
+.content,
+.content-outer,
+.content-inner,
+#main,
+#main-wrapper{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+body{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.content-outer,
+.content-fauxcolumn-outer,
+.region-inner{
+    max-width:100% !important;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.navbar{
+    height:76px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:20px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+
+    border-radius:13px;
+
+    background:var(--gradient);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-weight:900;
+    font-size:19px;
+
+    box-shadow:0 8px 25px rgba(103,88,255,.25);
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    font-size:14px;
+    font-weight:700;
+    color:#454a60;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.menu-btn{
+    display:none;
+
+    border:0;
+    background:none;
+
+    font-size:27px;
+    cursor:pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+    min-height:720px;
+
+    display:flex;
+    align-items:center;
+
+    padding:140px 0 80px;
+
+    background:
+    radial-gradient(circle at 10% 25%,rgba(103,88,255,.13),transparent 30%),
+    radial-gradient(circle at 90% 40%,rgba(18,198,179,.12),transparent 28%),
+    linear-gradient(180deg,#fbfbff,#ffffff);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(103,88,255,.08);
+
+    right:-150px;
+    top:70px;
+}
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+
+    position:relative;
+    z-index:2;
+}
+
+.hero-badge{
+    display:inline-block;
+
+    padding:9px 18px;
+
+    background:#eeecff;
+    color:var(--primary);
+
+    border-radius:50px;
+
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    margin-bottom:23px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,76px);
+
+    line-height:1.06;
+
+    letter-spacing:-3px;
+
+    margin-bottom:25px;
+}
+
+.gradient{
+    background:var(--gradient);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    background-clip:text;
+}
+
+.hero p{
+    max-width:710px;
+    margin:0 auto 35px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:var(--text);
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 25px;
+
+    border-radius:11px;
+
+    font-size:14px;
+    font-weight:800;
+
+    display:inline-block;
+
+    transition:.3s;
+}
+
+.btn-primary{
+    color:white;
+
+    background:var(--gradient);
+
+    box-shadow:0 12px 30px rgba(103,88,255,.22);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 40px rgba(103,88,255,.3);
+}
+
+.btn-secondary{
+    background:white;
+
+    border:1px solid var(--border);
+}
+
+.btn-secondary:hover{
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+section{
+    padding:95px 0;
+}
+
+.section-title{
+    max-width:730px;
+
+    margin:0 auto 55px;
+
+    text-align:center;
+}
+
+.label{
+    color:var(--primary);
+
+    text-transform:uppercase;
+
+    letter-spacing:1.5px;
+
+    font-size:12px;
+    font-weight:900;
+
+    display:block;
+
+    margin-bottom:12px;
+}
+
+.section-title h2{
+    font-size:clamp(32px,5vw,46px);
+
+    line-height:1.15;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:17px;
+}
+
+.section-title p{
+    color:var(--text);
+
+    font-size:16px;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.about-visual{
+    min-height:430px;
+
+    border-radius:30px;
+
+    background:var(--gradient);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(67,62,150,.15);
+}
+
+.circle1,
+.circle2{
+    position:absolute;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:50%;
+}
+
+.circle1{
+    width:330px;
+    height:330px;
+}
+
+.circle2{
+    width:240px;
+    height:240px;
+}
+
+.studio-card{
+    width:245px;
+
+    padding:35px 20px;
+
+    background:white;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:2;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+.studio-icon{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 18px;
+
+    border-radius:20px;
+
+    background:var(--gradient);
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:26px;
+    font-weight:900;
+}
+
+.studio-card h3{
+    font-size:19px;
+    margin-bottom:5px;
+}
+
+.studio-card p{
+    font-size:12px;
+    color:var(--text);
+}
+
+.about-content h2{
+    font-size:clamp(32px,5vw,46px);
+
+    line-height:1.17;
+
+    letter-spacing:-1.5px;
+
+    margin-bottom:22px;
+}
+
+.about-content p{
+    color:var(--text);
+
+    margin-bottom:17px;
+
+    font-size:15px;
+}
+
+.about-features{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-top:27px;
+}
+
+.about-feature{
+    background:var(--light);
+
+    border-radius:12px;
+
+    padding:14px;
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.check{
+    color:var(--secondary);
+
+    font-size:18px;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services{
+    background:var(--light);
+}
+
+.services-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+}
+
+.service{
+    background:white;
+
+    padding:34px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 50px rgba(34,38,75,.09);
+}
+
+.icon{
+    width:58px;
+    height:58px;
+
+    border-radius:16px;
+
+    background:#eeecff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:26px;
+
+    margin-bottom:23px;
+}
+
+.service:nth-child(2) .icon,
+.service:nth-child(5) .icon{
+    background:#e6faf7;
+}
+
+.service:nth-child(3) .icon,
+.service:nth-child(6) .icon{
+    background:#fff1ea;
+}
+
+.service h3{
+    font-size:19px;
+
+    margin-bottom:10px;
+}
+
+.service p{
+    color:var(--text);
+
+    font-size:14px;
+}
+
+
+/* =========================================
+   APP + GAME DEVELOPMENT
+========================================= */
+
+.development-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.development-card{
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.development-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.07);
+}
+
+.development-card .big-icon{
+    font-size:45px;
+
+    margin-bottom:20px;
+}
+
+.development-card h3{
+    font-size:27px;
+
+    margin-bottom:14px;
+}
+
+.development-card p{
+    color:var(--text);
+
+    margin-bottom:22px;
+}
+
+.development-card li{
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    color:#444a5e;
+}
+
+.development-card li::before{
+    content:"✓";
+
+    color:var(--secondary);
+
+    font-weight:bold;
+
+    margin-right:9px;
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.process{
+    background:var(--dark);
+
+    color:white;
+}
+
+.process .section-title p{
+    color:#aeb4c7;
+}
+
+.process .label{
+    color:#9e95ff;
+}
+
+.process-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.process-card{
+    padding:30px;
+
+    border-radius:18px;
+
+    background:var(--dark2);
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.number{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--gradient);
+
+    border-radius:12px;
+
+    font-weight:900;
+
+    margin-bottom:21px;
+}
+
+.process-card h3{
+    margin-bottom:9px;
+}
+
+.process-card p{
+    color:#aeb4c7;
+
+    font-size:13px;
+}
+
+
+/* =========================================
+   VALUES
+========================================= */
+
+.values{
+    background:var(--light);
+}
+
+.values-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:23px;
+}
+
+.value{
+    padding:33px;
+
+    border-radius:20px;
+
+    background:white;
+
+    border:1px solid var(--border);
+}
+
+.value-icon{
+    font-size:29px;
+
+    margin-bottom:17px;
+}
+
+.value h3{
+    margin-bottom:9px;
+
+    font-size:18px;
+}
+
+.value p{
+    color:var(--text);
+
+    font-size:13px;
+}
+
+
+/* =========================================
+   STATEMENT
+========================================= */
+
+.statement{
+    padding-top:85px;
+    padding-bottom:85px;
+}
+
+.statement-box{
+    padding:65px 40px;
+
+    border-radius:30px;
+
+    background:var(--gradient);
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.statement-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    right:-100px;
+    top:-170px;
+}
+
+.statement-box h2{
+    font-size:clamp(30px,5vw,45px);
+
+    margin-bottom:16px;
+
+    position:relative;
+}
+
+.statement-box p{
+    max-width:720px;
+
+    margin:auto;
+
+    opacity:.94;
+
+    font-size:16px;
+
+    position:relative;
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq{
+    background:var(--light);
+}
+
+.faq-list{
+    max-width:850px;
+
+    margin:auto;
+}
+
+.faq-item{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    margin-bottom:12px;
+
+    overflow:hidden;
+}
+
+.faq-question{
+    width:100%;
+
+    border:0;
+
+    background:white;
+
+    padding:20px 22px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    text-align:left;
+
+    font-size:15px;
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.faq-question span{
+    color:var(--primary);
+
+    font-size:22px;
+
+    transition:.3s;
+}
+
+.faq-answer{
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+}
+
+.faq-answer p{
+    padding:0 22px 21px;
+
+    color:var(--text);
+
+    font-size:14px;
+}
+
+.faq-item.active .faq-answer{
+    max-height:200px;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+    background:#0c0f20;
+
+    color:white;
+
+    padding:65px 0 28px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:45px;
+
+    padding-bottom:45px;
+}
+
+.footer-brand{
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    font-weight:800;
+
+    font-size:19px;
+
+    margin-bottom:16px;
+}
+
+.footer-icon{
+    width:39px;
+    height:39px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:var(--gradient);
+}
+
+.footer-about p{
+    max-width:430px;
+
+    color:#9da3b8;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.footer-column h4{
+    margin-bottom:17px;
+}
+
+.footer-column li{
+    color:#9da3b8;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:24px;
+
+    text-align:center;
+
+    color:#777f98;
+
+    font-size:12px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .values-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+
+        top:76px;
+        left:0;
+
+        width:100%;
+
+        background:white;
+
+        max-height:0;
+
+        overflow:hidden;
+
+        transition:.35s;
+
+        border-bottom:1px solid var(--border);
+    }
+
+    nav.active{
+        max-height:400px;
+    }
+
+    nav ul{
+        padding:25px 5%;
+
+        flex-direction:column;
+
+        gap:20px;
+    }
+
+    .hero{
+        min-height:auto;
+
+        padding:145px 0 90px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .services-grid,
+    .development-grid,
+    .process-grid,
+    .values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .container{
+        width:92%;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .logo-icon{
+        width:39px;
+        height:39px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .development-card,
+    .service,
+    .value{
+        padding:27px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="container navbar">
+
+<a href="#home" class="logo">
+
+<div class="logo-icon">
+AS
+</div>
+
+Ali Shair App Studio
+
+</a>
+
+
+<button class="menu-btn" id="menuBtn">
+☰
+</button>
+
+
+<nav id="navMenu">
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#services">What We Do</a></li>
+
+<li><a href="#development">Development</a></li>
+
+<li><a href="#process">Process</a></li>
+
+<li><a href="#values">Our Values</a></li>
+
+<li><a href="#faq">FAQ</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+APP & GAME DEVELOPMENT STUDIO
+</div>
+
+<h1>
+
+Ideas Become
+
+<span class="gradient">
+Digital Experiences.
+</span>
+
+</h1>
+
+<p>
+
+Ali Shair App Studio develops modern mobile applications
+and engaging games with a focus on thoughtful design,
+reliable functionality, performance and enjoyable user experiences.
+
+</p>
+
+
+<div class="buttons">
+
+<a href="#development" class="btn btn-primary">
+Explore Our Development
+</a>
+
+<a href="#about" class="btn btn-secondary">
+Discover Our Studio
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+
+<div class="about-visual">
+
+<div class="circle1"></div>
+<div class="circle2"></div>
+
+<div class="studio-card">
+
+<div class="studio-icon">
+AS
+</div>
+
+<h3>Ali Shair App Studio</h3>
+
+<p>
+Apps • Games • Digital Experiences
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="about-content">
+
+<span class="label">
+About Our Studio
+</span>
+
+<h2>
+
+Creating Software With
+
+<span class="gradient">
+Purpose & Creativity.
+</span>
+
+</h2>
+
+<p>
+
+Ali Shair App Studio is an app and game development
+studio focused on creating digital products designed
+for modern users.
+
+</p>
+
+<p>
+
+We combine development, design, usability and testing
+to build applications that are practical and games
+that are engaging and enjoyable.
+
+</p>
+
+<p>
+
+Our goal is to create polished digital experiences
+that balance visual quality, functionality and
+technical reliability.
+
+</p>
+
+
+<div class="about-features">
+
+<div class="about-feature">
+<span class="check">✓</span>
+Modern Development
+</div>
+
+<div class="about-feature">
+<span class="check">✓</span>
+User-Focused Design
+</div>
+
+<div class="about-feature">
+<span class="check">✓</span>
+Performance Focus
+</div>
+
+<div class="about-feature">
+<span class="check">✓</span>
+Quality Testing
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span class="label">
+What We Do
+</span>
+
+<h2>
+
+Development From
+
+<span class="gradient">
+Idea to Experience.
+</span>
+
+</h2>
+
+<p>
+
+We focus on the important areas required to create
+modern applications and enjoyable mobile games.
+
+</p>
+
+</div>
+
+
+
+<div class="services-grid">
+
+
+<div class="service">
+
+<div class="icon">
+📱
+</div>
+
+<h3>App Development</h3>
+
+<p>
+
+Building useful and modern mobile applications with
+clear interfaces, dependable functionality and
+responsive experiences.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="icon">
+🎮
+</div>
+
+<h3>Game Development</h3>
+
+<p>
+
+Creating engaging mobile games with responsive
+controls, structured gameplay and polished
+visual experiences.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>UI & UX Development</h3>
+
+<p>
+
+Designing clear interfaces and intuitive interactions
+that help users understand and enjoy digital products.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="icon">
+⚙️
+</div>
+
+<h3>Feature Development</h3>
+
+<p>
+
+Building useful application features and gameplay
+systems that support the purpose of each product.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="icon">
+⚡
+</div>
+
+<h3>Optimization</h3>
+
+<p>
+
+Improving responsiveness, efficiency and stability
+to create smoother experiences across supported devices.
+
+</p>
+
+</div>
+
+
+
+<div class="service">
+
+<div class="icon">
+🧪
+</div>
+
+<h3>Quality Testing</h3>
+
+<p>
+
+Reviewing functionality, layouts and user flows
+to identify issues and improve product reliability.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= DEVELOPMENT ================= -->
+
+<section id="development">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span class="label">
+Our Development
+</span>
+
+<h2>
+
+Two Areas.
+
+<span class="gradient">
+One Creative Studio.
+</span>
+
+</h2>
+
+<p>
+
+Our work centers around mobile applications and games,
+with each product developed around its own purpose and audience.
+
+</p>
+
+</div>
+
+
+
+<div class="development-grid">
+
+
+<div class="development-card">
+
+<div class="big-icon">
+📱
+</div>
+
+<h3>
+Application Development
+</h3>
+
+<p>
+
+We develop applications that combine useful functionality
+with straightforward and intuitive user experiences.
+
+</p>
+
+<ul>
+
+<li>Modern mobile interfaces</li>
+
+<li>Useful application features</li>
+
+<li>Responsive layouts</li>
+
+<li>Performance-focused development</li>
+
+<li>Structured user experiences</li>
+
+<li>Quality and reliability testing</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="development-card">
+
+<div class="big-icon">
+🎮
+</div>
+
+<h3>
+Game Development
+</h3>
+
+<p>
+
+We create mobile game experiences designed around
+engaging gameplay, clear interaction and enjoyable progression.
+
+</p>
+
+<ul>
+
+<li>Mobile game development</li>
+
+<li>Gameplay systems</li>
+
+<li>Responsive controls</li>
+
+<li>Game interface development</li>
+
+<li>Progression and level experiences</li>
+
+<li>Gameplay testing and refinement</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PROCESS ================= -->
+
+<section class="process" id="process">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span class="label">
+Development Process
+</span>
+
+<h2>
+How Ideas Become Products
+</h2>
+
+<p>
+
+A structured process helps transform an initial concept
+into a complete digital experience.
+
+</p>
+
+</div>
+
+
+
+<div class="process-grid">
+
+
+<div class="process-card">
+
+<div class="number">
+01
+</div>
+
+<h3>
+Concept
+</h3>
+
+<p>
+
+Defining the purpose, core functionality and intended
+experience of the product.
+
+</p>
+
+</div>
+
+
+
+<div class="process-card">
+
+<div class="number">
+02
+</div>
+
+<h3>
+Design
+</h3>
+
+<p>
+
+Planning layouts, interfaces, interactions and the
+overall visual experience.
+
+</p>
+
+</div>
+
+
+
+<div class="process-card">
+
+<div class="number">
+03
+</div>
+
+<h3>
+Development
+</h3>
+
+<p>
+
+Building the product with attention to functionality,
+structure and performance.
+
+</p>
+
+</div>
+
+
+
+<div class="process-card">
+
+<div class="number">
+04
+</div>
+
+<h3>
+Testing
+</h3>
+
+<p>
+
+Reviewing functionality and usability to improve
+stability and overall product quality.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= VALUES ================= -->
+
+<section class="values" id="values">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span class="label">
+Our Values
+</span>
+
+<h2>
+
+What Guides
+
+<span class="gradient">
+Our Development.
+</span>
+
+</h2>
+
+<p>
+
+Our approach is built around creating digital products
+that are thoughtful, reliable and enjoyable to use.
+
+</p>
+
+</div>
+
+
+
+<div class="values-grid">
+
+
+<div class="value">
+
+<div class="value-icon">
+💡
+</div>
+
+<h3>
+Creativity
+</h3>
+
+<p>
+
+Exploring ideas and approaches that help make
+digital experiences useful and engaging.
+
+</p>
+
+</div>
+
+
+
+<div class="value">
+
+<div class="value-icon">
+⭐
+</div>
+
+<h3>
+Quality
+</h3>
+
+<p>
+
+Paying attention to functionality, presentation
+and consistency throughout development.
+
+</p>
+
+</div>
+
+
+
+<div class="value">
+
+<div class="value-icon">
+👤
+</div>
+
+<h3>
+User Experience
+</h3>
+
+<p>
+
+Creating interfaces and interactions that are
+clear, understandable and enjoyable.
+
+</p>
+
+</div>
+
+
+
+<div class="value">
+
+<div class="value-icon">
+🚀
+</div>
+
+<h3>
+Performance
+</h3>
+
+<p>
+
+Focusing on responsive and efficient experiences
+across supported environments.
+
+</p>
+
+</div>
+
+
+
+<div class="value">
+
+<div class="value-icon">
+🔍
+</div>
+
+<h3>
+Attention to Detail
+</h3>
+
+<p>
+
+Reviewing the smaller elements that contribute
+to a polished overall experience.
+
+</p>
+
+</div>
+
+
+
+<div class="value">
+
+<div class="value-icon">
+🌱
+</div>
+
+<h3>
+Continuous Improvement
+</h3>
+
+<p>
+
+Learning and refining our approach as technology
+and user expectations continue to evolve.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= STATEMENT ================= -->
+
+<section class="statement">
+
+<div class="container">
+
+<div class="statement-box">
+
+<h2>
+Building Experiences Beyond Code.
+</h2>
+
+<p>
+
+At Ali Shair App Studio, development is about more than
+implementing features. We focus on bringing together
+functionality, design, performance and usability to create
+applications and games that deliver complete digital experiences.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq" id="faq">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span class="label">
+Studio FAQ
+</span>
+
+<h2>
+About Ali Shair App Studio
+</h2>
+
+<p>
+Learn more about our studio and development focus.
+</p>
+
+</div>
+
+
+
+<div class="faq-list">
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+What is Ali Shair App Studio?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Ali Shair App Studio is an app and game development studio
+focused on creating modern, reliable and engaging digital products.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+What does the studio develop?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Our primary areas of development are mobile applications
+and mobile games, including their interfaces, features,
+gameplay systems, optimization and testing.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Does the studio develop both apps and games?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. Ali Shair App Studio focuses on both application
+development and game development.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+What is important in your development approach?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Our development approach emphasizes usability,
+functionality, performance, consistency and product quality.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<div class="footer-about">
+
+<div class="footer-brand">
+
+<div class="footer-icon">
+AS
+</div>
+
+Ali Shair App Studio
+
+</div>
+
+<p>
+
+An app and game development studio focused on creating
+modern, engaging and dependable digital experiences.
+
+</p>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h4>
+Studio
+</h4>
+
+<ul>
+
+<li>
+<a href="#about">About Us</a>
+</li>
+
+<li>
+<a href="#services">What We Do</a>
+</li>
+
+<li>
+<a href="#process">Our Process</a>
+</li>
+
+<li>
+<a href="#values">Our Values</a>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="footer-column">
+
+<h4>
+Development
+</h4>
+
+<ul>
+
+<li>Mobile Applications</li>
+
+<li>Mobile Games</li>
+
+<li>UI & UX Development</li>
+
+<li>Performance</li>
+
+<li>Quality Testing</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+© <span id="year"></span> Ali Shair App Studio.
+All rights reserved.
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* COPYRIGHT YEAR */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+/* MOBILE MENU */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navMenu =
+document.getElementById("navMenu");
+
+
+menuBtn.addEventListener("click",function(){
+
+    navMenu.classList.toggle("active");
+
+    if(navMenu.classList.contains("active")){
+
+        menuBtn.innerHTML="×";
+
+    }else{
+
+        menuBtn.innerHTML="☰";
+
+    }
+
+});
+
+
+
+/* CLOSE MENU */
+
+document.querySelectorAll("nav a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        navMenu.classList.remove("active");
+
+        menuBtn.innerHTML="☰";
+
+    });
+
+});
+
+
+
+/* FAQ */
+
+document.querySelectorAll(".faq-question")
+.forEach(function(question){
+
+    question.addEventListener("click",function(){
+
+        const current =
+        this.parentElement;
+
+        document.querySelectorAll(".faq-item")
+        .forEach(function(item){
+
+            if(item !== current){
+
+                item.classList.remove("active");
+
+            }
+
+        });
+
+        current.classList.toggle("active");
+
+    });
+
+});
+
+
+
+/* HEADER SHADOW */
+
+window.addEventListener("scroll",function(){
+
+    const header =
+    document.querySelector("header");
+
+    if(window.scrollY > 20){
+
+        header.style.boxShadow =
+        "0 5px 25px rgba(0,0,0,.06)";
+
+    }else{
+
+        header.style.boxShadow =
+        "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
